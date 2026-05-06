@@ -79,7 +79,7 @@ function Dashboard() {
       weight: latest.weight || 0,
     };
 
-    // Calculation for Bar Chart: Latest vs Previous (instead of average, as per user's "dont show average" intent)
+    // Calculation for Bar Chart: Latest vs Previous (instead of average, as per user's "don't show average" intent)
     const comparisonData = [
       { name: 'Systolic', Current: latestMetrics.bps, Previous: prev.bloodPressureSystolic || 0 },
       { name: 'Diastolic', Current: latestMetrics.bpd, Previous: prev.bloodPressureDiastolic || 0 },
@@ -162,7 +162,7 @@ function Dashboard() {
       <Grid container spacing={3}>
         {/* Main Score & KPI */}
         <Grid item xs={12} lg={4}>
-          <HealthScore score={analysis?.dynamicScore || 0} momentum={analysis?.dynamicScore ? 10 : 0} />
+          <HealthScore score={analysis?.dynamicScore || 0} momentum={userData.momentumScore || 0} />
         </Grid>
 
         <Grid item xs={12} lg={8}>
